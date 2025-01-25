@@ -1,12 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Product } from '../models/product';
+import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductsApiService } from '../products-api.service';
 import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-products-list',
-  imports: [MatIconModule],
+  imports: [MatIconModule, ProductCardComponent],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.scss',
 })
