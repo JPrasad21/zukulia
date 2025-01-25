@@ -1,0 +1,33 @@
+<div class="border-t border-t-border-1 px-20 py-5 bg-gray-1">
+  <div class="border-b border-b-border-3 py-5 grid grid-flow-col">
+    <div>
+      <a class="flex gap-2 cursor-pointer" [routerLink]="['/']">
+        <img class="w-8 h-8" src="images/Zukulia.png" alt="Zukulia" />
+        <span class="text-2xl text-primary-blue">Zukulia</span>
+      </a>
+      <pre class="text-sm text-black-2 font-medium mt-2">
+From Z to A,
+We've Got It All!
+    </pre
+      >
+      <div class="flex gap-2">
+        <img src="icons/social/facebook.svg" alt="facebook" class="cursor-pointer" />
+        <img src="icons/social/instagram.svg" alt="facebook" class="cursor-pointer" />
+        <img src="icons/social/twitter.svg" alt="facebook" class="cursor-pointer" />
+      </div>
+    </div>
+    <div class="grid grid-cols-4">
+      @for (category of categories; track $index) {
+        <div>
+          <h6 class="text-black-1 font-semibold cursor-pointer mb-3">{{ category.title }}</h6>
+          @for (link of category.subLinks; track $index) {
+            <p class="text-black-2 cursor-pointer text-sm mb-1">{{ link }}</p>
+          }
+        </div>
+      }
+    </div>
+  </div>
+  <div class="py-5">
+    <p class="text-black-3 text-sm">© 2024 Zukulia, Inc. All rights reserved.</p>
+  </div>
+</div>
