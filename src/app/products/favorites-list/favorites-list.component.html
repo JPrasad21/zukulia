@@ -1,0 +1,12 @@
+<div class="bg-gray-2 px-20 py-5">
+  <h3 class="font-semibold text-xl text-primary-blue mb-5">Favorite Products</h3>
+  @if (favoriteProducts().length) {
+    <div class="grid grid-cols-5 gap-8">
+      @for (item of favoriteProducts(); track $index) {
+        <app-product-card [product]="item"></app-product-card>
+      }
+    </div>
+  } @else {
+    <span>No Favorites found :(</span>
+  }
+</div>

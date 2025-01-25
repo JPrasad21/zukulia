@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { Product } from '../models/product';
@@ -16,7 +16,10 @@ export class ProductDetailsComponent {
   product: Product = inject(MAT_DIALOG_DATA);
   productsService = inject(ProductsService);
   selectedImageIndex = 0;
-  isFavorite = this.productsService.favoriteProducts.some((x) => x === this.product.id);
+  isFavorite = computed(() => {
+    const favProducts = this.productsService.favoriteProducts();
+    return favProducts.some((x) => x.id === this.product.id);
+  });
   goLeft() {
     if (this.selectedImageIndex > 0) {
       this.selectedImageIndex -= 1;
@@ -29,12 +32,11 @@ export class ProductDetailsComponent {
   }
 
   handleFavoriteSelection() {
-    if (this.isFavorite) {
+    if (this.isFavorite()) {
       this.productsService.removeFromFavoriteProducts(this.product.id);
     } else {
-      this.productsService.addToFavoriteProducts(this.product.id);
+      this.productsService.addToFavoriteProducts(this.product);
     }
-    this.isFavorite = !this.isFavorite;
   }
   closeDialog() {
     this.dialogRef.close();
