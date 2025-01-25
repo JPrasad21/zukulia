@@ -12,7 +12,6 @@ export class ProductsApiService {
   urls = {
     products: 'products'
   }
-  constructor() { }
 
   getProducts(): Observable<ProductResponse> {
     return this.httpService.get<ProductResponse>(this.urls.products);

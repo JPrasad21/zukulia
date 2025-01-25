@@ -10,17 +10,16 @@ export class HttpService {
   http = inject(HttpClient);
 
   baseUrl = environment.apiUrl;
-  constructor() { }
 
   get<T>(url: string): Observable<T> {
     return this.http.get<T>(this.baseUrl + url);
   }
   
-  post<T>(url: string, body: any): Observable<T> {
+  post<T>(url: string, body: unknown): Observable<T> {
     return this.http.post<T>(url, body);
   }
 
-  put<T>(url: string, body: any): Observable<T> {
+  put<T>(url: string, body: unknown): Observable<T> {
     return this.http.put<T>(url, body);
   }
 
