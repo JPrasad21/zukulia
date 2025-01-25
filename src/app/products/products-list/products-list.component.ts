@@ -1,12 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from '../../shared/components/header/header.component';
-import { ProductsService } from '../products.service';
-import { ProductsApiService } from '../products-api.service';
 import { Product } from '../models/product';
+import { ProductsApiService } from '../products-api.service';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-products-list',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, MatIconModule],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.scss',
 })
