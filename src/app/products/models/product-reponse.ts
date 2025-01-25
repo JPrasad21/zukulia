@@ -1,8 +1,8 @@
-import { Product } from "./product";
+import { Product } from './product';
 
 export interface ProductResponse {
-    limit: number;
-    skip: number;
-    total: number;
-    products: Product[];
+  limit: number;
+  skip: number;
+  total: number;
+  products: Product[];
 }

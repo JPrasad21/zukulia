@@ -4,7 +4,7 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpService {
   http = inject(HttpClient);
@@ -14,7 +14,7 @@ export class HttpService {
   get<T>(url: string): Observable<T> {
     return this.http.get<T>(this.baseUrl + url);
   }
-  
+
   post<T>(url: string, body: unknown): Observable<T> {
     return this.http.post<T>(url, body);
   }

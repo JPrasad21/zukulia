@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { HeaderComponent } from "../../shared/components/header/header.component";
+import { HeaderComponent } from '../../shared/components/header/header.component';
 import { ProductsService } from '../products.service';
 import { ProductsApiService } from '../products-api.service';
 import { Product } from '../models/product';
@@ -8,7 +8,7 @@ import { Product } from '../models/product';
   selector: 'app-products-list',
   imports: [HeaderComponent],
   templateUrl: './products-list.component.html',
-  styleUrl: './products-list.component.scss'
+  styleUrl: './products-list.component.scss',
 })
 export class ProductsListComponent implements OnInit {
   productsService = inject(ProductsService);
@@ -27,7 +27,7 @@ export class ProductsListComponent implements OnInit {
       },
       error: () => {
         this.loader = false;
-      }
+      },
     });
   }
 }
