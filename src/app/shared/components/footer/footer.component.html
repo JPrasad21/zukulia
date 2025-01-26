@@ -19,9 +19,9 @@ We've Got It All!
     <div class="grid sm:grid-cols-4 grid-cols-2 pt-5 sm:pt-0">
       @for (category of categories; track $index) {
         <div>
-          <h6 class="text-black-1 font-semibold cursor-pointer mb-3">{{ category.title }}</h6>
+          <a class="text-black-1 font-semibold cursor-pointer mb-3 block" [routerLink]="['/']">{{ category.title }}</a>
           @for (link of category.subLinks; track $index) {
-            <p class="text-black-2 cursor-pointer text-sm mb-1">{{ link }}</p>
+            <a class="text-black-2 cursor-pointer text-sm mb-1 block" [routerLink]="['/']">{{ link }}</a>
           }
         </div>
       }

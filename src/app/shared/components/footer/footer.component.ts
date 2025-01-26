@@ -11,20 +11,20 @@ import { RouterModule } from '@angular/router';
 export class FooterComponent {
   categories = [
     {
-      title: 'Category 1',
-      subLinks: ['Link 1', 'Link 2', 'Link 3', 'Link 4'],
+      title: 'Shopping',
+      subLinks: ['Men', 'Women', 'Kids', 'Home & Living'],
     },
     {
-      title: 'Category 2',
-      subLinks: ['Link 1', 'Link 2', 'Link 3', 'Link 4'],
+      title: 'Customer Policies',
+      subLinks: ['About Us', 'Contact Us', 'FAQ', 'Cancellation'],
     },
     {
-      title: 'Category 3',
-      subLinks: ['Link 1', 'Link 2', 'Link 3', 'Link 4'],
+      title: 'Useful Links',
+      subLinks: ['Blog', 'Careers', 'Site Map'],
     },
     {
-      title: 'Category 4',
-      subLinks: ['Link 1', 'Link 2', 'Link 3', 'Link 4'],
+      title: "What's New",
+      subLinks: ['Perfumes', 'Beauty', 'Furnitures', 'Groceries'],
     },
   ];
 }
