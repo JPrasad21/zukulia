@@ -1,5 +1,5 @@
-<div class="border-t border-t-border-1 px-20 py-5 bg-gray-1">
-  <div class="border-b border-b-border-3 py-5 grid grid-flow-col">
+<div class="border-t border-t-border-1 lg:px-20 md:px-10 px-5 py-5 bg-gray-1">
+  <div class="border-b border-b-border-3 py-5 sm:grid sm:grid-flow-col">
     <div>
       <a class="flex gap-2 cursor-pointer" [routerLink]="['/']">
         <img class="w-8 h-8" src="images/Zukulia.png" alt="Zukulia" />
@@ -16,7 +16,7 @@ We've Got It All!
         <img src="icons/social/twitter.svg" alt="facebook" class="cursor-pointer" />
       </div>
     </div>
-    <div class="grid grid-cols-4">
+    <div class="grid sm:grid-cols-4 grid-cols-2 pt-5 sm:pt-0">
       @for (category of categories; track $index) {
         <div>
           <h6 class="text-black-1 font-semibold cursor-pointer mb-3">{{ category.title }}</h6>
