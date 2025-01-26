@@ -1,5 +1,8 @@
 <div class="bg-gray-2 px-20 py-5">
-  <h3 class="font-semibold text-xl text-primary-blue mb-5">Favorite Products</h3>
+  <h3 class="font-semibold text-xl text-primary-blue mb-5">
+    Favorite Products
+    <span class="font-normal text-sm text-text-labels ml-1">{{ favoriteProducts().length }} items</span>
+  </h3>
   @if (favoriteProducts().length) {
     <div class="grid grid-cols-5 gap-8">
       @for (item of favoriteProducts(); track $index) {
@@ -7,6 +10,11 @@
       }
     </div>
   } @else {
-    <span>No Favorites found :(</span>
+    <div class="w-full h-60 flex justify-center items-center">
+      <div class="flex flex-col items-center">
+        <span class="text-lg text-black-1 mb-2">Oops. Your Favorites looks empty.</span>
+        <button mat-button [routerLink]="['/']">Browse Products</button>
+      </div>
+    </div>
   }
 </div>
