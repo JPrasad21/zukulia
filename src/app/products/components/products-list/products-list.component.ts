@@ -3,10 +3,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { Product } from '../models/product';
+import { Product } from '../../models/product';
+import { ProductsApiService } from '../../products-api.service';
+import { ProductsService } from '../../products.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { ProductsApiService } from '../products-api.service';
-import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-products-list',

@@ -1,10 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { Product } from '../models/product';
+import { Product } from '../../models/product';
+import { ProductsApiService } from '../../products-api.service';
+import { ProductsService } from '../../products.service';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
-import { ProductsApiService } from '../products-api.service';
-import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-card',

@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { Product } from '../models/product';
-import { ProductsService } from '../products.service';
+import { Product } from '../../models/product';
+import { ProductsService } from '../../products.service';
 
 @Component({
   selector: 'app-product-details',

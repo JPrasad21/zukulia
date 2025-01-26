@@ -1,8 +1,8 @@
 import { Component, computed, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
+import { ProductsService } from '../../products.service';
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-favorites-list',
