@@ -5,7 +5,7 @@ For this take-home assignment, I have developed an application called Zukulia, a
 ---
 
 ## **1. Angular Version**
-- Utilized the latest version of Angular (v19) to ensure the application is built with the most up-to-date features and improvements.
+- Utilized the latest version of Angular (v19.x) to ensure the application is built with the most up-to-date features and improvements.
 
 ---
 
