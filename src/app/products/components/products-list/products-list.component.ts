@@ -1,24 +1,15 @@
-import { Component, effect, inject, OnInit, signal } from '@angular/core';
+import { Component, effect, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select';
 import { PlaceholderComponent } from '../../../shared/components/placeholder/placeholder.component';
 import { Product } from '../../models/product';
 import { ProductsApiService } from '../../products-api.service';
 import { ProductsService } from '../../products.service';
+import { FilterComponent } from '../filter/filter.component';
 import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-products-list',
-  imports: [
-    MatIconModule,
-    ProductCardComponent,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    PlaceholderComponent,
-  ],
+  imports: [ProductCardComponent, MatButtonModule, PlaceholderComponent, FilterComponent],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.scss',
 })
@@ -27,8 +18,6 @@ export class ProductsListComponent implements OnInit {
   productsApiService = inject(ProductsApiService);
   products: Product[] = [];
   filteredProducts: Product[] = [];
-  categories: string[] = [];
-  selectedCategory = signal<string>('');
   isLoading = false;
   constructor() {
     effect(() => {
@@ -36,16 +25,9 @@ export class ProductsListComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.getCategories();
     this.getProducts();
   }
-  getCategories() {
-    this.productsApiService.getCategories().subscribe({
-      next: (response) => {
-        this.categories = response;
-      },
-    });
-  }
+
   getProducts() {
     this.isLoading = true;
     this.productsApiService.getProducts().subscribe({
@@ -60,7 +42,7 @@ export class ProductsListComponent implements OnInit {
     });
   }
   getFilteredProducts() {
-    const category = this.selectedCategory();
+    const category = this.productsService.selectedCategory();
     if (category) {
       this.filteredProducts = this.products.filter((x) => x.category === category);
     } else {
@@ -68,6 +50,6 @@ export class ProductsListComponent implements OnInit {
     }
   }
   resetFilter() {
-    this.selectedCategory.set('');
+    this.productsService.selectedCategory.set('');
   }
 }

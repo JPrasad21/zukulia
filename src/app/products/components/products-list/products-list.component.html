@@ -2,17 +2,7 @@
   <h3 class="font-semibold text-xl text-primary-blue mb-5">
     Products <span class="font-normal text-sm text-text-labels ml-1">{{ filteredProducts.length }} items</span>
   </h3>
-  <div>
-    <h4 class="text-lg text-black-1">Filters:</h4>
-    <mat-form-field appearance="outline">
-      <mat-select [(value)]="selectedCategory" placeholder="Category">
-        <mat-option [value]="''">All categories</mat-option>
-        @for (category of categories; track $index) {
-          <mat-option [value]="category">{{ category }}</mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-  </div>
+  <app-filter />
   @if (isLoading) {
     <div class="w-full h-60 flex justify-center items-center">
       <span class="text-lg text-black-1">Loading...</span>
@@ -24,7 +14,7 @@
       }
     </div>
   } @else {
-    @if (selectedCategory()) {
+    @if (productsService.selectedCategory()) {
       <app-placeholder text="No products found based on the applied filter.">
         <button mat-button (click)="resetFilter()">Reset Filters</button>
       </app-placeholder>

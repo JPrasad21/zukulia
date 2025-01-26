@@ -7,6 +7,7 @@ import { Product } from './models/product';
 export class ProductsService {
   selectedProduct = signal<Product | undefined>(undefined);
   favoriteProducts = signal<Product[]>([]);
+  selectedCategory = signal<string>('');
   constructor() {
     this.getFavoriteProducts();
   }

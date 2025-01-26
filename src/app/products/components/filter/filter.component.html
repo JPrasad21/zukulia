@@ -1,0 +1,11 @@
+<div>
+  <h4 class="text-lg text-black-1">Filters:</h4>
+  <mat-form-field appearance="outline">
+    <mat-select [(value)]="productsService.selectedCategory" placeholder="Category">
+      <mat-option [value]="''">All categories</mat-option>
+      @for (category of categories; track $index) {
+        <mat-option [value]="category">{{ category }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>
