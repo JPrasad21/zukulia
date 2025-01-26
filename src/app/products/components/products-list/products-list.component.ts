@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { PlaceholderComponent } from '../../../shared/components/placeholder/placeholder.component';
 import { Product } from '../../models/product';
 import { ProductsApiService } from '../../products-api.service';
 import { ProductsService } from '../../products.service';
@@ -10,7 +11,14 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-products-list',
-  imports: [MatIconModule, ProductCardComponent, MatSelectModule, MatFormFieldModule, MatButtonModule],
+  imports: [
+    MatIconModule,
+    ProductCardComponent,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    PlaceholderComponent,
+  ],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.scss',
 })

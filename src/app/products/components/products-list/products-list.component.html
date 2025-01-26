@@ -24,15 +24,12 @@
       }
     </div>
   } @else {
-    <div class="w-full h-60 flex justify-center items-center">
-      @if (selectedCategory()) {
-        <div class="flex flex-col items-center">
-          <span class="text-lg text-black-1 mb-2">No products found based on the applied filter.</span>
-          <button mat-button (click)="resetFilter()">Reset Filters</button>
-        </div>
-      } @else {
-        <span>No Products found</span>
-      }
-    </div>
+    @if (selectedCategory()) {
+      <app-placeholder text="No products found based on the applied filter.">
+        <button mat-button (click)="resetFilter()">Reset Filters</button>
+      </app-placeholder>
+    } @else {
+      <app-placeholder text="No products found" />
+    }
   }
 </div>
