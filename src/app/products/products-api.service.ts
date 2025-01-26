@@ -11,6 +11,7 @@ export class ProductsApiService {
   httpService = inject(HttpService);
   urls = {
     products: 'products',
+    category: 'products/category-list',
   };
 
   getProducts(): Observable<ProductResponse> {
@@ -19,5 +20,9 @@ export class ProductsApiService {
 
   getProductById(id: string): Observable<Product> {
     return this.httpService.get<Product>(this.urls.products + '/' + id);
+  }
+
+  getCategories(): Observable<string[]> {
+    return this.httpService.get<string[]>(this.urls.category);
   }
 }

@@ -1,12 +1,38 @@
 <div class="bg-gray-2 px-20 py-5">
-  <h3 class="font-semibold text-xl text-primary-blue mb-5">Products</h3>
-  @if (products.length) {
+  <h3 class="font-semibold text-xl text-primary-blue mb-5">
+    Products <span class="font-normal text-sm text-text-labels ml-1">{{ filteredProducts.length }} items</span>
+  </h3>
+  <div>
+    <h4 class="text-lg text-black-1">Filters:</h4>
+    <mat-form-field appearance="outline">
+      <mat-select name="countryString" [(value)]="selectedCategory" placeholder="Category">
+        <mat-option [value]="''">All categories</mat-option>
+        @for (category of categories; track $index) {
+          <mat-option [value]="category">{{ category }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  @if (isLoading) {
+    <div class="w-full h-60 flex justify-center items-center">
+      <span class="text-lg text-black-1">Loading...</span>
+    </div>
+  } @else if (filteredProducts.length) {
     <div class="grid grid-cols-5 gap-8">
-      @for (item of products; track $index) {
+      @for (item of filteredProducts; track $index) {
         <app-product-card [product]="item"></app-product-card>
       }
     </div>
   } @else {
-    <span>Loading...</span>
+    <div class="w-full h-60 flex justify-center items-center">
+      @if (selectedCategory()) {
+        <div class="flex flex-col items-center">
+          <span class="text-lg text-black-1 mb-2">No products found based on the applied filter.</span>
+          <button mat-button (click)="resetFilter()">Reset Filters</button>
+        </div>
+      } @else {
+        <span>No Products found</span>
+      }
+    </div>
   }
 </div>
