@@ -15,8 +15,8 @@
     </div>
   } @else {
     @if (productsService.selectedCategory()) {
-      <app-placeholder text="No products found based on the applied filter.">
-        <button mat-button (click)="resetFilter()">Reset Filters</button>
+      <app-placeholder text="No matches found! Reset your filters to discover more amazing products.">
+        <button mat-button (click)="resetFilter()">Reset</button>
       </app-placeholder>
     } @else {
       <app-placeholder text="No products found" />

@@ -33,7 +33,7 @@
     <div class="flex gap-2">
       <p class="text-black-1 mb-2 font-semibold">{{ product.title }}</p>
       <mat-icon
-        class="cursor-pointer text-yellow"
+        class="cursor-pointer text-red"
         (click)="handleFavoriteSelection()"
         (keypress)="handleFavoriteSelection()"
         >{{ isFavorite() ? 'favorite' : 'favorite_outline' }}</mat-icon
