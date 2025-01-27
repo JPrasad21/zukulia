@@ -4,7 +4,7 @@
     <mat-select [(value)]="productsService.selectedCategory" placeholder="Category">
       <mat-option [value]="''">All categories</mat-option>
       @for (category of categories; track $index) {
-        <mat-option [value]="category">{{ category }}</mat-option>
+        <mat-option [value]="category">{{ category | pascalCaseWithSpace }}</mat-option>
       }
     </mat-select>
   </mat-form-field>
