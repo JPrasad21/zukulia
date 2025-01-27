@@ -25,6 +25,17 @@ For this take-home assignment, I focused on setting up a robust, maintainable, a
 ### 6. **SonarCloud Extension**
 - Incorporated to analyze code quality, identify code smells, and enforce clean code principles directly within the IDE (VS Code).
 
+---
+## **New Angular Features**
+
+### 7. **Angular Signals**
+- Used **Angular Signals** for managing state reactivity to improve:
+  - Performance: Avoid unnecessary component re-renders by leveraging reactive primitives.
+  - Simplicity: Enhanced readability and maintainability of reactive code.
+  - Efficiency: Declarative approach to managing state changes in a predictable manner.
+
+---
+
 ## **Additional Notes**
 - **Structure**: The project is designed with a modular architecture to promote reusability and scalability.
 - **Accessibility and Responsiveness**: Tailwind CSS and Angular Material were leveraged to ensure the application is both responsive and accessible across devices.
